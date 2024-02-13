@@ -1,0 +1,40 @@
+class employee:
+    def getdata(self,emno,empname,designation,basic,hra,da,ta):
+        self.emno=emno
+        self.empname=empname
+        self.designation=designation
+        self.basic=basic
+        self.hra=hra
+        self.da=da
+        self.ta=ta
+    def putdata(self):
+        print('employee no:',self.emno)
+        print('employee name:',self.empname)
+        print('employee designation:',self.designation)
+        print('basic:',self.basic)
+        print('hra:',self.hra)
+        print('da:',self.da)
+        print('ta:',self.ta)
+        netsalary=self.basic+self.hra+self.da+self.ta
+        tax=netsalary/4
+        print('netsalary:',netsalary)
+        print('tax:',tax)
+        if tax>50000:
+            print('tax is 5%')
+        elif tax>35000:
+            print('tax is 3%')
+        elif tax>20000:
+            print('tax is 1%')
+        else:
+            print('tax is 0')
+
+e=employee()
+emno=int(input('Enter employee no-->'))
+empname=input('Enter employee name-->')
+designation=input('Enter designation-->')
+basic=int(input('enter basic-->'))
+hra=int(input('enter hra-->'))
+da=int(input('enter da-->'))
+ta=int(input('enter ta-->'))
+e.getdata(emno,empname,designation,basic,hra,da,ta)
+e.putdata()
